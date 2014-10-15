@@ -2,7 +2,7 @@
 
 ## Usage
 
-Make your custom cell extend LTSwipeTableViewCell and call the correspoing methods in it
+Make your custom cell extend LTSwipeTableViewCell and call the corresponding methods
 
 ```objective-c
 @interface LTSwipeTableViewCell : UITableViewCell
@@ -10,3 +10,5 @@ Make your custom cell extend LTSwipeTableViewCell and call the correspoing metho
 -(void) animateBack;
 @end
 ```
+
+See the example project for details~ 
