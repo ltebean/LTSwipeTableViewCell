@@ -1,4 +1,4 @@
-# ![LTSwipeTableViewCell](https://raw.githubusercontent.com/ltebean/LTSwipeTableViewCell/master/demo.gif)
+# ![LTSwipeTableViewCell](https://raw.githubusercontent.com/ltebean/LTSwipeTableViewCell/master/demos.gif)
 
 ## Usage
 
