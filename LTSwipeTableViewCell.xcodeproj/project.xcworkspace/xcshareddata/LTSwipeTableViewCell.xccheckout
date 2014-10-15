@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BA21139F-8D7D-4677-A967-DFDCCCE50B6C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LTSwipeTableViewCell</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>354F2DD00C670F7C74C865BF4F956E7B913F6803</key>
+		<string>https://github.com/ltebean/LTSwipeTableViewCell.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LTSwipeTableViewCell.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>354F2DD00C670F7C74C865BF4F956E7B913F6803</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ltebean/LTSwipeTableViewCell.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>354F2DD00C670F7C74C865BF4F956E7B913F6803</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>354F2DD00C670F7C74C865BF4F956E7B913F6803</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LTSwipeTableViewCell</string>
+		</dict>
+	</array>
+</dict>
+</plist>

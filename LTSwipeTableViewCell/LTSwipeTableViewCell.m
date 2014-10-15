@@ -84,7 +84,7 @@ typedef NS_ENUM(NSInteger, CellState) {
         
         CGFloat translation = self.contentView.center.x - self.centerX;
         
-        if(translation<-rightThreshold){
+        if(fabs(translation)>rightThreshold/2){
             [self animateCenterXTo:self.centerX-rightThreshold forView:self.contentView];
             self.state = rightRevealedState;
         }else{
