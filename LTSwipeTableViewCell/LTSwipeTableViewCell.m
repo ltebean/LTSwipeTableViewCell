@@ -76,15 +76,19 @@ typedef NS_ENUM(NSInteger, CellState) {
     CGFloat rightThreshold = CGRectGetWidth(self.rightViewGroup.bounds);
     CGPoint translation = [recognizer translationInView:self];
 
-    self.contentView.center = CGPointMake(self.contentView.center.x+translation.x, self.contentView.center.y);
-   
+    
+    CGFloat offset = self.contentView.center.x - self.centerX;
+
+    if(offset <= 0){
+        self.contentView.center = CGPointMake(self.contentView.center.x+translation.x, self.contentView.center.y);
+    }
+    
     [recognizer setTranslation:CGPointMake(0, 0) inView:self];
     
     if(recognizer.state == UIGestureRecognizerStateEnded) {
         
-        CGFloat translation = self.contentView.center.x - self.centerX;
         
-        if(fabs(translation)>rightThreshold/2){
+        if(-offset > rightThreshold/2){
             [self animateCenterXTo:self.centerX-rightThreshold forView:self.contentView];
             self.state = rightRevealedState;
         }else{
@@ -110,7 +114,7 @@ typedef NS_ENUM(NSInteger, CellState) {
 
 -(void) animateCenterXTo:(CGFloat) centerX forView:(UIView *)view
 {
-    [UIView animateWithDuration:0.6 delay:0 usingSpringWithDamping:0.8
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8
           initialSpringVelocity:0 options:0 animations:^{
               view.center=CGPointMake(centerX, view.center.y);
           } completion:nil];
