@@ -15,7 +15,6 @@ typedef NS_ENUM(NSInteger, CellState) {
 
 @interface LTSwipeTableViewCell()<UIScrollViewDelegate>
 @property(nonatomic,weak) UIView* rightViewGroup;
-@property(nonatomic) CGFloat centerX;
 @property CellState state;
 @end
 
@@ -51,9 +50,16 @@ typedef NS_ENUM(NSInteger, CellState) {
     self.rightViewGroup=rightButtonsView;
     [self bringSubviewToFront:self.contentView];
     
-    self.centerX = CGRectGetMidX(self.bounds);
     self.state = normalState;
     
+}
+
+
+-(void) layoutSubviews
+{
+    [super layoutSubviews];
+    CGFloat width = CGRectGetWidth(self.rightViewGroup.bounds);
+    self.rightViewGroup.frame = CGRectMake(CGRectGetWidth(self.bounds)-width, 0, width, CGRectGetHeight(self.bounds));
 }
 
 -(void) addRightView:(UIView *)view
@@ -67,7 +73,7 @@ typedef NS_ENUM(NSInteger, CellState) {
 
 -(void) animateBack
 {
-    [self animateCenterXTo:self.centerX forView:self.contentView];
+    [self animateCenterXTo:CGRectGetMidX(self.bounds) forView:self.contentView];
 }
 
 
@@ -76,8 +82,9 @@ typedef NS_ENUM(NSInteger, CellState) {
     CGFloat rightThreshold = CGRectGetWidth(self.rightViewGroup.bounds);
     CGPoint translation = [recognizer translationInView:self];
 
-    
-    CGFloat offset = self.contentView.center.x - self.centerX;
+    CGFloat centerX = CGRectGetMidX(self.bounds);
+
+    CGFloat offset = self.contentView.center.x - centerX;
 
     if(offset <= 0){
         self.contentView.center = CGPointMake(self.contentView.center.x+translation.x, self.contentView.center.y);
@@ -89,10 +96,10 @@ typedef NS_ENUM(NSInteger, CellState) {
         
         
         if(-offset > rightThreshold/2){
-            [self animateCenterXTo:self.centerX-rightThreshold forView:self.contentView];
+            [self animateCenterXTo:centerX-rightThreshold forView:self.contentView];
             self.state = rightRevealedState;
         }else{
-            [self animateCenterXTo:self.centerX forView:self.contentView];
+            [self animateCenterXTo:centerX forView:self.contentView];
             self.state = normalState;
         }
     }
